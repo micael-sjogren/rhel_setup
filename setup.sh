@@ -30,7 +30,6 @@ lsmod | grep ntfs
 sudo dnf install xclip
 
 # enable video codecs for firefox
-sudo dnf install epel-release
 sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm
 sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm
 sudo dnf config-manager --enable crb
