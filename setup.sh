@@ -7,7 +7,7 @@ sudo dnf install code
 # setup geforce rtx 3080
 sudo dnf install epel-release 
 sudo dnf upgrade
-sudo reboot
+# sudo reboot
 sudo dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/rhel9/$(uname -i)/cuda-rhel9.repo
 sudo dnf install kernel-headers-$(uname -r) kernel-devel-$(uname -r) tar bzip2 make automake gcc gcc-c++ pciutils elfutils-libelf-devel libglvnd-opengl libglvnd-glx libglvnd-devel acpid pkgconfig dkms
 sudo dnf module install nvidia-driver:latest-dkms
@@ -16,7 +16,6 @@ echo 'omit_drivers+=" nouveau "' | sudo tee /etc/dracut.conf.d/blacklist-nouveau
 sudo dracut --regenerate-all --force
 sudo depmod -a
 sudo mokutil --import /var/lib/dkms/mok.pub
-sudo reboot
 
 # install tkinter
 sudo dnf update -y
@@ -43,3 +42,5 @@ sudo dnf groupupdate sound-and-video
 sudo dnf install git
 git config --global user.name "Micael"
 git config --global user.email "micaelsjogren.750129@gmail.com"
+
+sudo reboot
